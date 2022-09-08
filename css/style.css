@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html { font-size: 62.5%; }
+
+.wrap {
+	width: 616px;
+	margin: 0 auto;
+	margin-top: 10%;
+	font-size: 1.6rem;
+	text-align: center;
+}
+
+p {
+	line-height: 2.5em;
+}
+
+.wrap div:nth-child(2) {
+	margin-top: 50px;
+}
+
+.wrap div {
+	width: 100%;
+}
+
+form {
+	display: flex;
+	gap: 2em;
+	flex-direction: column;
+	margin: 3% auto;
+	font-size: 1.4em;
+}
+
+input {
+	margin: 0 auto;
+}
+
+input[type="text"] {
+	border: solid 2px black;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+input[type="button"] {
+	background: black;
+	color: white;
+	border-radius: 5px;
+	padding: 10px 20px;
+}
+
+@media screen and (max-width:640px){
+	.wrap {
+		width: 100%;
+		padding: 0 5%;
+		font-size: 1.4rem;
+		line-height: 2em;
+	}
+	}
+	

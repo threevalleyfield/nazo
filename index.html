@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<title>TVF探偵事務所より</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div>
+            <p>TVF探偵事務所へようこそ。<br>
+この扉を叩いたあなたは、いっけん平和に見えるグリーンベルシティの裏に隠された闇の香りを嗅ぎつけた勘のいい人。<br>
+そんなあなたに、ある事件の解明に協力してほしい。<br>
+実はグリーンベルシティには、陰から街を支配しようとしている人物がいる。<br>
+それは、街を代表する有名企業、エアセル社の社長、エン・スワロー氏。<br>
+スワロー氏とグリーンベルシティの市長との間で、長年にわたり、裏取引が行われてきたのだ。<br>
+その現場、会員制クラブ「Blatant lie（真っ赤な嘘）」の場所を、この事務所の初代探偵、コードネームZipperは関係者の証言によって特定した。<br>
+しかし、Zipperはある日、忽然と姿を消し、証拠の書かれた手帳のメモも、街に散りじりになってしまったのだ。<br>
+エアセル社からの依頼を受け、ND地区にアジトを持つマフィア、スカロップファミリーが関係していると思われるが、彼の消息は未だ不明。<br>
+あなたには友人と協力し、街に散らばった証拠のメモを集め、会員制クラブ の場所を推理してほしい。<br>
+手帳の切れ端は全部で6枚。<br>
+厄介なのは、証言者の中にエアセル社の関係者がいて、彼らが嘘をついていること……<br></p>
+        </div>
+        <div>
+            <p>会員制クラブの場所を入力</p>
+            <form></form>
+        </div>
+    </div>
+
+    <div class="code">
+        <div class="center">
+            <form name="frmAngoukaJump" action="javascript:DecodeJump();">
+                <input name="txtPasswordForDecode" type="text" size="30" maxlength="15" id="inp_val" placeholder="場所の名前"/>
+                <input name="btnMD5" onclick="DecodeJump();" type="button" readonly="readonly" value="入力" />
+            </form>
+        </div>
+        
+        <script>// <![CDATA[
+        function DecodeJump(){
+          var cURL = new Array();
+          cURL[0] = "26029,34872,20119,29814,24292,26111,34915,20172,29805,24318,26023,34851,20118,29800,24312,26026,34855,20098,29736,24304,26028,34872,20107,29811,24309,26091,34853,20108,29737,24313,26020,34870,20108,29737,24291,26035,34858,20098,29800,24292,26034,34857,20113,29793,24309";
+          cURL[1] = "12465,12447,12461,12443,12475,12499,12534,12484,12466,12418,12475,12420,12477,12423,12470,12420,12466,12426,12535,12428,12449,12445,12465,12446,12475,12485,12464,12420,12519,12423,12472,12433,12470,12484,12461,12445,12462,12424,12471,12440,12462,12430,12459,12428,12458";
+          cURL[2] = "12305,12543,12301,12539,12315,12467,12374,12452,12306,12514,12315,12516,12317,12519,12310,12516,12306,12522,12375,12524,12289,12541,12305,12542,12315,12453,12304,12516,12359,12519,12312,12529,12310,12452,12301,12541,12302,12520,12311,12536,12302,12526,12299,12524,12298";
+          cURL[3] = "12305,12543,12301,12539,12475,12499,12534,12484,12306,12514,12315,12516,12477,12423,12470,12420,12306,12522,12375,12524,12449,12445,12465,12446,12315,12453,12304,12516,12519,12423,12472,12433,12310,12452,12301,12541,12462,12424,12471,12440,12302,12526,12299,12524,12458";
+          cURL[4] = "12465,12447,12461,12443,12315,12467,12374,12452,12466,12418,12475,12420,12317,12519,12310,12516,12466,12426,12535,12428,12289,12541,12305,12542,12475,12485,12464,12420,12359,12519,12312,12529,12470,12484,12461,12445,12302,12520,12311,12536,12462,12430,12459,12428,12298";
+          var KeyWord;
+          KeyWord = document.frmAngoukaJump.txtPasswordForDecode.value;
+        
+          re = new RegExp("https://kibounooka\.github+\.io/nazo/tvfanswergb$", "i");
+          var str = new Array();
+          for ( var k = 0; k <= cURL.length - 1; k++ ){
+            str[k] = De(cURL[k],KeyWord);
+          }
+        
+            if (str[0].match(re)) {
+              document.location.href = str[0] ;
+            } else if (str[1].match(re)) {
+              document.location.href = str[1] ;
+            } else if (str[2].match(re)) {
+              document.location.href = str[2] ;
+            } else if (str[3].match(re)) {
+              document.location.href = str[3] ;
+            } else if (str[4].match(re)) {
+              document.location.href = str[4] ;
+            }else{
+              alert("どうやらその場所ではないようです。\nもう一度考えてみてください。");
+            }
+        }
+        
+        function MakeKey(Key,Nmb){
+          var j;
+          KeyBuff = new Array(Nmb);
+          for(j=0;j < Nmb;j++){
+            KeyBuff[j] = Key.substring(j % Key.length,j % Key.length + 1).charCodeAt(0);
+          }
+        }
+        
+        function De(str,mKey){
+          var StrBuff = str.split(",");
+          var LBuff = "";
+          UB = StrBuff.length; MakeKey(mKey,UB);
+          for(i = 0; i < UB;i++ ){
+            StrBuff[i] = unescape(StrBuff[i]) ^ KeyBuff[i];
+            LBuff = LBuff + String.fromCharCode(StrBuff[i]); 
+          }
+          return LBuff;
+        }
+        // ]]></script>
+        </div>
+ 
+</body>
+</html>
